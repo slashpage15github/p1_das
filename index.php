@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="container">
-    <form name="forma" action="php/insertar.php" method="post" onsubmit="return valida_curriculum();">
+    <form name="forma" enctype="multipart/form-data" action="php/insertar.php" method="post" onsubmit="return valida_curriculum();">
         <h1>Ingreso de Curriculum</h1>
         <div id="row">
             <div class="col-25">
@@ -89,7 +89,7 @@
             </div>
 
         <div class="col-75check">
-                <input type="checkbox" id="f_suscri" name="f_suscri" value="SI" checked>
+                <input type="checkbox" id="f_suscri" name="f_suscri" value="S" checked>
             </div>
         </div>
 
