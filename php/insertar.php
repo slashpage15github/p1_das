@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+</html>
+
 <?php
     include("../class/class_candidatos_dal.php");
     $candidatos_ref=new candidatos_dal;
@@ -67,15 +74,26 @@ if ($_FILES['f_curri']['name'] != null) {
 
         if ($_FILES['f_curri']['name'] != null) {
             if(move_uploaded_file($tmp,$path)){
-                echo 'Curriculum cargado';  
+                //echo 'Curriculum cargado';  
                 
               }
               else{
                 print "Error: Algo inesperado ocurrio al mover el archivo 1 a la trayectoria física, vuelva a intentar";
             }
           }
-
-        echo "Candidato Registrado";
+          //echo "<script>";
+           // echo "alert('Candidato registrado con éxito');";
+          //echo "<script>";
+        //echo "Candidato Registrado";
+        print '<script>';
+						print 'Swal.fire({
+                          title: "Registro De Candidatos",
+                          text: "¡Candidato Ingresado Correctamente!",
+                          icon: "success"
+                          }).then(function() {
+                            window.location = "../index.php";
+                          });';
+						print '</script>';
      }
      else{
         echo "No se logró ingresar al candidato";
