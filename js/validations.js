@@ -27,39 +27,85 @@ let valida_curriculum = () =>{
   let js_interes=document.getElementById("areade").value;
     
     if (js_nom.length == 0){
-        alert("Error:El nombre no puede ir vació");
+        //alert("Error:El nombre no puede ir vació");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:El nombre no puede ir vació!'
+            
+          });
         return false;
     }
     else if (js_ape.length==0){
-        alert("Error:El apellido no puede ir vació");
+        //alert("Error:El apellido no puede ir vació");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:El apellido no puede ir vació!'
+          });
         return false;
     }
     else if (js_con.length==0){
-        alert("Error:La Contraseña no puede ir vació");
+        //alert("Error:La Contraseña no puede ir vació");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:La Contraseña no puede ir vació'
+          });
         return false;
     }
     else if (js_con.length<6 || js_con.length>12){
-        alert("Error:la contraseña debe tener entre 6 y 12 chars");
+        //alert("Error:la contraseña debe tener entre 6 y 12 chars");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:la contraseña debe tener entre 6 y 12 chars'
+          });
         return false;
     }
     else if (js_rfc.length==0){
-        alert("Error:El RFC no puede ir vació");
+        //alert("Error:El RFC no puede ir vació");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:El RFC no puede ir vació'
+          });
         return false;
     }
     else if (!pattern_rfc.test(js_rfc)){
-        alert('El dato RFC no cumple el formato! ejemplo:PETD741512R45');
+        //alert('El dato RFC no cumple el formato! ejemplo:PETD741512R45');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El dato RFC no cumple el formato! ejemplo:PETD741512R45'
+          });
         return false;
     }
     else if (!radioSelected){
-        alert('Seleccione el Genero');
+        //alert('Seleccione el Genero');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Seleccione el Genero'
+          });
         return false;
     }
     else if (archivo.length==0){
-        alert("Error:Debe cargar su curriculum");
+        //alert("Error:Debe cargar su curriculum");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:Debe cargar su curriculum'
+          });
         return false;
     }   
     else if (js_interes==0){
-        alert("Error:Debe Seleccionar un área de interes");
+        //alert("Error:Debe Seleccionar un área de interes");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error:Debe Seleccionar un área de interes'
+          });
         return false;
     }       
 }
