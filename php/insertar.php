@@ -58,6 +58,11 @@ if ($_FILES['f_curri']['name'] != null) {
 
 
      $obj_candidato= new candidatos($rfc,$nom,$ape,$con,$gen,$final_file,$are,$sus,null);
+    //VALIDAR SI EXISTE
+    $existe=$candidatos_ref->existe_candidato($rfc);
+ if ($existe==0){       
+
+     //insert     
      if ($candidatos_ref->insertar_candidato($obj_candidato)==1){
 
         if ($_FILES['f_curri']['name'] != null) {
@@ -70,11 +75,14 @@ if ($_FILES['f_curri']['name'] != null) {
             }
           }
 
-
-
         echo "Candidato Registrado";
      }
      else{
         echo "No se logró ingresar al candidato";
      }
+//end insert
+}
+else{
+    echo "El candidato ya esta registrado";
+}
 ?>
