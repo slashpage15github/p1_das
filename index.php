@@ -70,17 +70,42 @@
         </div>
     
         <div id="row">
+<?php
+    include('class/class_areas_dal.php');
+    $obj_areas= new areas_dal;
+    $result_areas=$obj_areas->lista_areas();
+        //echo '<pre>';
+        //print_r($result_areas);
+        //echo '</pre>';
+        //exit;
+        if ($result_areas==NULL){
+            echo '<h2>No se encontraron areass</h2>';
+    }
+    else{ 
+?>
+
+
+
             <div class="col-25">
                 <label for="areade">Área de interes:</label>
             </div>
             <div class="col-75size">
                 <select id="areade" name="areade">
                     <option value="0">Seleccione:</option>
-                    <option value="1">Salud</option>
-                    <option value="2">Informática</option>
-                    <option value="3">Deportes</option>
+                    <?php
+foreach ($result_areas as $key=>$value){
+?>                      
+<option value="<?=$value->getID_area(); ?>"><?=$value->getArea_des(); ?></option>
+<?php
+}//el del for
+?>    
+
+
                 </select>
             </div>
+            <?php
+}//el if del NULL
+?>             
         </div>
 
         <div id="row">
